@@ -27,13 +27,14 @@
 
     <button class="button2" onclick="startTimer()">Démarrer/Reprendre</button>
     <button class="button1" onclick="pauseTimer()">Pause</button>
-    <button class="button3" onclick="resetTimer()">Réinitialiser</button>
+<br>
+    <button class="button3" onclick="window.location.reload();">Réinitialiser</button>
 
     <script>
         const boutonSon = document.getElementById('clickSound');
         const compteurAffichage = document.getElementById('clickCount');
         let compteur = 0;
-        const fichiersSonores = ["boing.mp3", "applepay.mp3"];
+        const fichiersSonores = ["Songs/boing.mp3", "Songs/applepay.mp3","Songs/netflix.mp3","Songs/SNCF.mp3","Songs/Bip.mp3","Songs/Bruh.mp3","Songs/Buzzer.mp3","Songs/discord.mp3","Songs/Error.mp3","Songs/Fortnite.mp3","Songs/pew.mp3","Songs/punch.mp3","Songs/roblox.mp3","Songs/shocked.mp3","Songs/Wow.mp3" ];
         const audioElements = fichiersSonores.map(fichier => {
             const audio = new Audio(fichier);
             audio.preload = 'auto';
