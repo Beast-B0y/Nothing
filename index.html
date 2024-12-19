@@ -1,109 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
-<meta charset="UTF-8">
 <head>
+    <meta charset="UTF-8">
     <title>Nothing</title>
     <meta name="description" content="Un site pour... perdre son temps">
-    <meta charset="UTF-8">
     <link rel="stylesheet" href="Style.css">
     <link rel="icon" href="NOTHING.jpg">
 </head>
 
 <body>
 
-    
     <nav>
         <ul>
-            <li><a href="menu/a propos.html">À propos </a></li>
-            <li><a href="menu/contact.html">Contact </a></li>
+            <li><a href="menu/a propos.html">À propos</a></li>
+            <li><a href="menu/contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <h1>Bienvenue sur Nothing</h1>
-    <p class="p2">Cette page contient un compteur de clics et un chronomêtre pour déclancher le chronomêtre il suffit d'appuyer sur Démarer/Reprendre, <br>
-         le compteur de clics se déclance tout seul. Bonne perte de temps.</p>
+    <p class="p2">Cette page contient un compteur de clics et un chronomètre. Pour déclencher le chronomètre, il suffit d'appuyer sur "Démarrer/Reprendre". Le compteur de clics se déclenche à chaque clic sur le bouton principal. Bonne perte de temps.</p>
 
-    <button id="clickButton" onclick="countClicks();">Perdre son temps</button>
-<p>Nombre de clics : <span id="clickCount">0</span></p>
-<p>Temps perdu : <span id="timer">  00:00:00</span></p>
-<audio id="clickSound" src="boing.mp3"></audio>
-<button class="button2" onclick="startTimer()">Démarer/Reprendre</button>
-<button class="button1" onclick="pauseTimer()">Pause</button><br>
-<button class="button3" onclick="location.reload()">Réinitialiser</button>
+    <button id="clickSound">Perdre son temps</button>
 
-<script>
-    let compteur = 0;
-    const bouton = document.querySelector('#clickButton');
+    <p>Nombre de clics : <span id="clickCount">0</span></p>
+    <p>Temps perdu : <span id="timer">00:00:00</span></p>
 
-    bouton.addEventListener('click', function() {
-        compteur++;
-        document.getElementById('clickCount').textContent = compteur;
+    <button class="button2" onclick="startTimer()">Démarrer/Reprendre</button>
+    <button class="button1" onclick="pauseTimer()">Pause</button>
+    <button class="button3" onclick="resetTimer()">Réinitialiser</button>
 
-        if (compteur % 100 === 0) {
-            alert("T'as vraiment appuyé " + compteur + " fois! T'as compris que le concept c'est d'avoir un bouton inutule ?");
-        }    
-    });
-</script>
+    <script>
+        const boutonSon = document.getElementById('clickSound');
+        const compteurAffichage = document.getElementById('clickCount');
+        let compteur = 0;
+        const fichiersSonores = ["boing.mp3", "applepay.mp3"];
+        const audioElements = fichiersSonores.map(fichier => {
+            const audio = new Audio(fichier);
+            audio.preload = 'auto';
+            return audio;
+        });
 
-<script>
-    let timerInterval;
-    let seconds = 0;
-    let minutes = 0;
-    let hours = 0;
-    let isPaused = false;
+        boutonSon.addEventListener('click', () => {
+            compteur++;
+            compteurAffichage.textContent = compteur;
 
-    function startTimer() {
-        timerInterval = setInterval(updateTimer, 1000);
-    }
+            const indexAleatoire = Math.floor(Math.random() * fichiersSonores.length);
+            const sonAleatoire = audioElements[indexAleatoire];
+            sonAleatoire.currentTime = 0;
+            sonAleatoire.play();
 
-    function pauseTimer() {
-        clearInterval(timerInterval);
-        isPaused = true;
-    }
+             if (compteur % 100 === 0) {
+                alert("T'as vraiment appuyé " + compteur + " fois! T'as compris que le concept c'est d'avoir un bouton inutile ?");
+            } 
+        });
 
-    function resumeTimer() {
-        if (isPaused) {
-            startTimer();
-            isPaused = false;
-        }
-    }
+        let timerInterval;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
 
-    function updateTimer() {
-        seconds++;
-        if (seconds === 60) {
-            seconds = 0;
-            minutes++;
-            if (minutes === 60) {
-                minutes = 0;
-                hours++;
+        function startTimer() {
+            if (!timerInterval) { // Empêche de lancer plusieurs intervalles
+                timerInterval = setInterval(updateTimer, 1000);
             }
         }
-        document.getElementById("timer").textContent = 
-            (hours < 10 ? "0" + hours : hours) + ":" + 
-            (minutes < 10 ? "0" + minutes : minutes) + ":" + 
-            (seconds < 10 ? "0" + seconds : seconds);
-    }
-</script>
 
-<script>
-    var count = 0;
+        function pauseTimer() {
+            clearInterval(timerInterval);
+            timerInterval=null;
+        }
 
-    function countClicks() {
-        var sound = document.getElementById("clickSound");
-        sound.play();
-        count++;
-        document.getElementById("clickCount").textContent = count;
-    }
-</script>
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerInterval=null;
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            updateTimer(); // Met à jour l'affichage à 00:00:00
+            compteur=0;
+            compteurAffichage.textContent=0;
+        }
 
-<script>
-    function playSound() {
-        var sound = document.getElementById("clickSound");
-        sound.play();
-    }
-</script>
-
-
+        function updateTimer() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+            document.getElementById("timer").textContent =
+                (hours < 10 ? "0" + hours : hours) + ":" +
+                (minutes < 10 ? "0" + minutes : minutes) + ":" +
+                (seconds < 10 ? "0" + seconds : seconds);
+        }
+    </script>
 
 </body>
 
