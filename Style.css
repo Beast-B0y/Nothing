@@ -1,8 +1,8 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background: no-repeat;
-  background-color: rgb(31, 28, 28);
+  background: repeat;
+  background-image: url(img/marbre\ noir.avif);
   background-size: cover;
 
   padding: 20px;
