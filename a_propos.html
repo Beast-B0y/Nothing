@@ -17,13 +17,37 @@
 
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html">Accueil </a></li>
-            <li><a href="contact.html">Contacts </a></li>
-            <li><a href="a_venir.html">À venir </a></li>
+        <div class="menu-toggle">
+          <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a_venir.html">À venir</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const hamburger = document.querySelector('.hamburger'); // Select the hamburger
+        const menu = document.querySelector('.menu');
+      
+        hamburger.addEventListener('click', () => { // Use hamburger click
+          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+      
+        window.addEventListener('click', (event) => {
+          if (!menuToggle.contains(event.target)) {
+            menu.style.display = 'none';
+          }
+        });
+      </script>
 
-        </ul>
-    </nav>
+
     <p class="p2">Nothing a été conçu pour perdre son temps inutillement en appuyant sur un bouton inutile.
     L'utilité ? Moi même je n'en trouve aucune.
     <br><br>Bonne perte de temps !   

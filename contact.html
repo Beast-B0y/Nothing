@@ -10,9 +10,9 @@
 
   gtag('config', 'G-3FK9PLRRR0');
 </script>
-    <link rel="icon" href="NOTHING.jpg">
+    <link rel="icon" href="nothing.jpg">
     <title>Contact</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
     .center-logo {
         display: flex;
@@ -23,14 +23,38 @@
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil </a></li>
-            <li><a href="a propos.html">À propos </a></li>
-            <li><a href="a venir.html">À venir</a></li>
-
+    
+  <nav>
+      <div class="menu-toggle">
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a_venir.html">À venir</a></li>
+          <li><a href="a_propos.html">À propos</a></li>
         </ul>
+      </div>
     </nav>
+    
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const hamburger = document.querySelector('.hamburger'); // Select the hamburger
+      const menu = document.querySelector('.menu');
+    
+      hamburger.addEventListener('click', () => { // Use hamburger click
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      });
+    
+      window.addEventListener('click', (event) => {
+        if (!menuToggle.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      });
+    </script>
+
     <p class="p2">
         
         Vous avez des questions ou rencontrez des problèmes ? N'hésitez pas à me contacter ! 

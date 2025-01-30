@@ -15,18 +15,39 @@
     <link rel="icon" href="nothing.jpg">
 </head>
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil </a></li>
-            <li><a href="contact.html">Contacts </a></li>
-            <li><a href="a_propos.html">À propos </a></li>
-
-        </ul>
-    </nav>
+<nav>
+    <div class="menu-toggle">
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a_propos.html">À propos</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const hamburger = document.querySelector('.hamburger'); // Select the hamburger
+    const menu = document.querySelector('.menu');
+  
+    hamburger.addEventListener('click', () => { // Use hamburger click
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+  
+    window.addEventListener('click', (event) => {
+      if (!menuToggle.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
     
     <br><br>
-        <li>Modification du menu</li> <br>
+        <li>Modification du menu (Faite le 30/01/25)</li> <br>
         <li>Bouton pour desactiver certains sons</li> <br>
         <li>Ajout d'un boutton qui redirigera vers des playlists Spotify</li> <br>
         <li>Possibilité de changer le thème</li> <br>
