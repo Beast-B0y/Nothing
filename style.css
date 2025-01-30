@@ -198,7 +198,7 @@ nav a:hover {
   color: #fff;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 320px) {
   nav {
     padding: 5px;
   }
@@ -207,6 +207,7 @@ nav a:hover {
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    font-size: 50px;
   }
 
   nav ul::-webkit-scrollbar {
@@ -218,8 +219,8 @@ nav a:hover {
     margin: 0 2px;
   }
 
-  nav a {
+  nav ul li a {
     padding: 8px 10px;
-    font-size: 0.8rem;
+    font-size: 2em !important;
   }
 }

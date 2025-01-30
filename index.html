@@ -14,17 +14,17 @@
     <meta charset="UTF-8">
     <title>Nothing</title>
     <meta name="description" content="Un site pour... perdre son temps inutillement, mais c'est fun">
-    <link rel="stylesheet" href="Style.css">
-    <link rel="icon" href="NOTHING.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="nothing.jpg">
 </head>
 
 <body>
 
     <nav>
         <ul>
-            <li><a href="a propos.html">À propos</a></li>
-            <li><a href="contact.html">Contacts</a></li>
-            <li><a href="a venir.html">À venir</a></li>
+            <li><a href="a_propos.html">À propos</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="a_venir.html">À venir</a></li>
 
         </ul>
     </nav>
@@ -50,7 +50,7 @@
         const boutonSon = document.getElementById('clickSound');
         const compteurAffichage = document.getElementById('clickCount');
         let compteur = 0;
-        const fichiersSonores = ["Songs/boing.mp3", "Songs/applepay.mp3", "Songs/netflix.mp3", "Songs/SNCF.mp3", "Songs/Bip.mp3", "Songs/Bruh.mp3", "Songs/Buzzer.mp3", "Songs/discord.mp3", "Songs/Error.mp3", "Songs/Fortnite.mp3", "Songs/pew.mp3", "Songs/punch.mp3", "Songs/roblox.mp3", "Songs/shocked.mp3", "Songs/Wow.mp3"];
+        const fichiersSonores = ["songs/boing.mp3", "songs/applepay.mp3", "songs/netflix.mp3", "songs/sncf.mp3", "songs/bip.mp3", "songs/bruh.mp3", "songs/buzzer.mp3", "songs/discord.mp3", "songs/error.mp3", "songs/fortnite.mp3", "songs/pew.mp3", "songs/punch.mp3", "songs/roblox.mp3", "songs/shocked.mp3", "songs/wow.mp3"];
         const audioElements = fichiersSonores.map(fichier => {
             const audio = new Audio(fichier);
             audio.preload = 'auto';
