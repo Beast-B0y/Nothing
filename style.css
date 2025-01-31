@@ -108,6 +108,28 @@ button:hover {
   cursor: pointer;
 }
 
+.mute_button {
+  background-color: #4CAF50; /* Vert pour "Activé" */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; 
+}
+
+.mute_button:hover {
+  background-color: #3e8e41;
+}
+
+.mute_button.muted {
+  background-color: #f44336; /* Rouge pour "Muet" */
+}
 
 
 .menu-toggle {
@@ -218,6 +240,25 @@ label, input {
   display: block;
   margin-bottom: 10px;
 }
+
+.menu {
+  width: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond légèrement transparent */ 
+}
+
+.menu li {
+  display: block;
+  width: 100%;
+  text-align: center; /* Centre le texte */
+  padding: 15px 0; /* Ajoute plus d'espace vertical */
+}
+
+.menu a {
+  font-size: 18px; /* Augmente la taille du texte */
+}
+
+
 
 @media only screen and (max-width: 320px) {
   nav {
