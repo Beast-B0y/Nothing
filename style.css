@@ -60,7 +60,7 @@ h1 {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #3498db;
+  background-color: #049bff;
   color: white;
   border: none;
   cursor: pointer;
@@ -69,11 +69,11 @@ button {
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #049bff;
 }
 
 .button1 {
-  background-color: rgb(255, 0, 0);
+  background-color: red;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -83,9 +83,13 @@ button:hover {
   margin: 10px;
   cursor: pointer;
 }
+.button1:hover {
+  background-color: red;
+}
+
 
 .button2 {
-  background-color: rgb(82, 224, 25);
+  background-color: rgb(216, 150, 7);
   color: rgb(255, 255, 255);
   padding: 10px 20px;
   border: none;
@@ -95,6 +99,11 @@ button:hover {
   margin: 10px;
   cursor: pointer;
 }
+.button2:hover {
+  background-color: rgb(216, 150, 7);
+}
+
+
 
 .button3 {
   background-color: rgb(255, 0, 221);
@@ -107,11 +116,14 @@ button:hover {
   margin: 10px;
   cursor: pointer;
 }
+.button3:hover {
+  background-color: rgb(255, 0, 221);
+}
 
 .mute_button {
-  background-color: #4CAF50; /* Vert pour "Activé" */
+  background-color: rgb(0, 199, 0);
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -124,11 +136,11 @@ button:hover {
 }
 
 .mute_button:hover {
-  background-color: #3e8e41;
+  background-color: rgb(0, 199, 0);
 }
 
 .mute_button.muted {
-  background-color: #f44336; /* Rouge pour "Muet" */
+  background-color: #ff1100; /* Rouge pour "Muet" */
 }
 
 
