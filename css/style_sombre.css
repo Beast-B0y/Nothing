@@ -225,3 +225,59 @@ span {
   font-weight: bold;
   color: #ff0404;
 }
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px; /* Taille de police plus petite */
+  }
+
+  h1 {
+    font-size: 3em; /* Taille de titre réduite */
+  }
+
+  p {
+    font-size: 12px; /* Taille de police plus petite pour les paragraphes */
+  }
+
+  .p2 {
+    font-size: 13px; /* Taille de police plus petite pour .p2 */
+  }
+
+  .p0 {
+    font-size: 20px; /* Taille de police plus petite pour .p0 */
+  }
+
+  button, .button0, .button1, .button2, .button3, .mute_button {
+    font-size: 14px; /* Taille de police plus petite pour les boutons */
+    padding: 8px 16px; /* Ajuster le padding pour les boutons */
+  }
+
+  .menu a {
+    font-size: 1em; /* Taille de police plus petite pour les liens du menu */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 4em; /* Taille de titre ajustée */
+  }
+
+  p {
+    font-size: 14px; /* Taille de police ajustée pour les paragraphes */
+  }
+
+  .p2 {
+    font-size: 15px; /* Taille de police ajustée pour .p2 */
+  }
+
+  .p0 {
+    font-size: 22px; /* Taille de police ajustée pour .p0 */
+  }
+}
+
+@media (min-width: 992px) {
+  /* Pour les grands écrans, vous pouvez éventuellement ajuster la taille de h1 si nécessaire */
+  /* h1 {
+    font-size: 5em;  
+  } */
+}
