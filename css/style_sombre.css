@@ -227,7 +227,7 @@ span {
 }
 
 /* Media Queries */
-@media (max-width: 767px) { /* Styles pour les petits écrans (smartphones) */
+@media (max-width: 320px) { /* Styles pour les petits écrans (smartphones) */
   body {
     font-size: 14px;
   }
@@ -242,7 +242,7 @@ span {
 
   button, .button0, .button1, .button2, .button3, .mute_button {
     font-size: 14px;
-    padding: 20px 90px;
+    padding: 800px 160px;
   }
 
   .menu a {
