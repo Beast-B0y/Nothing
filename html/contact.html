@@ -40,25 +40,42 @@
 
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
-        const hamburger = document.querySelector('.hamburger');
-        const menu = document.querySelector('.menu');
-
-        hamburger.addEventListener('click', () => {
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (!menuToggle.contains(event.target)) {
-                menu.style.display = 'none';
-            }
-        });
-    </script>
-
+ const hamburger = document.querySelector('.hamburger');
+ const menu = document.querySelector('.menu');
+ 
+ // Gestionnaire d'événements pour le menu déroulant
+ if (hamburger && menu) {
+     hamburger.addEventListener('click', () => {
+         menu.classList.toggle('active');
+         hamburger.classList.toggle('active');
+ 
+         const expanded = menu.classList.contains('active');
+         hamburger.setAttribute('aria-expanded', expanded);
+         menu.setAttribute('aria-hidden', !expanded);
+     });
+ 
+     // Fermeture du menu au clic à l'extérieur
+     window.addEventListener('click', (event) => {
+         if (menu.classList.contains('active') && !menuToggle.contains(event.target) && !menu.contains(event.target)) {
+             menu.classList.remove('active');
+             hamburger.classList.remove('active');
+             hamburger.setAttribute('aria-expanded', false);
+             menu.setAttribute('aria-hidden', true);
+         }
+     });
+ 
+     // Empêcher la propagation du clic depuis le menu
+     menu.addEventListener('click', (event) => {
+         event.stopPropagation();
+     });
+ }
+ 
+       </script>
 
 
     <p class="p2">
-        Vous avez des questions ou rencontrez des problèmes ? N'hésitez pas à me contacter !
-        Vous pouvez m'envoyer un message privé ou un email en utilisant les liens ci-dessous.
+        Vous avez des questions ou rencontrez des problèmes ? N'hésitez pas à me contacter ! <br>
+        Vous pouvez m'envoyer un message privé ou un email en utilisant les liens ci-dessous. <br>
         Et si ce site vous plaît, n'hésitez pas à vous abonner à mes réseaux sociaux pour me soutenir !
     </p>
 
