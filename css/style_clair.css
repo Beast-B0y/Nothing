@@ -264,7 +264,6 @@ button:hover {
   transition: transform 0.3s ease-in-out; /* Durée et type d'animation */
 }
 
-
 /* Styles pour le menu et la navigation */
 nav {
   position: relative; /* Important : le parent de .menu-toggle doit être positionné */
