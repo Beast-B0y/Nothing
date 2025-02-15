@@ -242,19 +242,27 @@ button:hover {
 
 
 .progress-bar {
-  width: 200px; /* Largeur de la barre de progression */
-  height: 20px; /* Hauteur de la barre de progression */
-  background-color: #e0e0e0; /* Couleur de fond de la barre de progression */
-  border-radius: 5px; /* Bord arrondi */
-  overflow: hidden; /* Empêche la barre intérieure de dépasser */
+  width: 300px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Important pour la gestion des bordures */
 }
 
 .progress-bar-inner {
-  width: 0%; /* Largeur initiale de la barre intérieure (0%) */
+  width: 0%; /* Initialement à 0% */
   height: 100%;
-  background-color: #4CAF50; /* Couleur de la barre de progression */
-  border-radius: 5px; /* Bord arrondi */
-  transition: width 0.5s ease-in-out; /* Animation de la barre de progression */
+  background-color: #ff0606; /* Couleur de la barre */
+  border-radius: 5px;
+  box-sizing: border-box; /* Important pour la gestion des bordures */
+  /* Utilisation de transform pour une meilleure performance */
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out; /* Durée et type d'animation */
 }
 
 
