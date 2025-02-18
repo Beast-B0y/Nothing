@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FK9PLRRR0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3FK9PLRRR0');
+    </script>
+
+    <link rel="icon" href="../nothing.jpg">
+    <link rel="stylesheet" href="jeux.css">
+    <title>Le Pendu</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="menu-toggle">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="../index.html">Accueil 🏠</a></li>
+                <li><a href="../html/a_venir.html">À venir 📆</a></li>
+                <li><a href="../html/contact.html">Contacts ☎</a></li>
+                <li><a href="../html/a_propos.html">À propos 📃</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        // ... (votre code JavaScript pour le menu)
+    </script>
+
+    <div class="game-container">
+        <h1>Le Pendu</h1>
+        <div id="word-length"></div>
+        <div id="word-display"></div>
+        <div class="input-area">
+            <input type="text" id="guess" maxlength="1">
+            <button onclick="guessLetter()" class="button_pendu">Deviner</button>
+            <span class="attempts-left"></span>
+        </div>
+        <div id="result"></div>
+        <div id="guessed-letters">Lettres testées : </div>
+    </div>
+
+    <script src="pendu.js"></script>
+</body>
+</html>

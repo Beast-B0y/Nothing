@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FK9PLRRR0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3FK9PLRRR0');
+</script>
+
+<link rel="icon" href="../nothing.jpg">
+<link rel="stylesheet" href="jeux.css">
+<title>Pierre-Feuille-Ciseaux</title>
+
+</head>
+
+
+
+<body>
+
+    <nav>
+        <div class="menu-toggle">
+          <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul class="menu">
+            <li><a href="../index.html">Accueil 🏠</a></li>
+            <li><a href="../html/a_venir.html">À venir 📆</a></li>
+            <li><a href="../html/contact.html">Contacts ☎</a></li>
+            <li><a href="../html/a_propos.html">À propos 📃</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <script>
+       const menuToggle = document.querySelector('.menu-toggle');
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+
+// Gestionnaire d'événements pour le menu déroulant
+if (hamburger && menu) {
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+
+        const expanded = menu.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', expanded);
+        menu.setAttribute('aria-hidden', !expanded);
+    });
+
+    // Fermeture du menu au clic à l'extérieur
+    window.addEventListener('click', (event) => {
+        if (menu.classList.contains('active') && !menuToggle.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', false);
+            menu.setAttribute('aria-hidden', true);
+        }
+    });
+
+    // Empêcher la propagation du clic depuis le menu
+    menu.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+}
+</script>
+
+  <h1>Pierre-Feuille-Ciseaux</h1>
+  <div id="resultat"></div>
+  <button onclick="jouer('pierre')">Pierre</button>
+  <button onclick="jouer('feuille')">Feuille</button>
+  <button onclick="jouer('ciseaux')">Ciseaux</button>
+  <script src="chifumi.js"></script>
+</body>
+</html>
