@@ -261,3 +261,38 @@ button_pendu:hover {
     color: #888;
     font-size: 1.1em;
 }
+
+
+#message {
+    margin-bottom: 10px;
+}
+#replayButton {
+    display: none; /* Masquer le bouton "Rejouer" au début */
+}
+
+
+#gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3 colonnes de 100px de large */
+    grid-template-rows: repeat(3, 100px);    /* 3 rangées de 100px de haut */
+    grid-gap: 5px; /* Espacement entre les cases */
+    margin: 20px auto;
+}
+
+.row {
+    /* Plus besoin de définir le display ici */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(250, 232, 232);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+

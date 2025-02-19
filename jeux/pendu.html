@@ -37,18 +37,19 @@
         // ... (votre code JavaScript pour le menu)
     </script>
 
-    <div class="game-container">
-        <h1>Le Pendu</h1>
-        <div id="word-length"></div>
-        <div id="word-display"></div>
-        <div class="input-area">
-            <input type="text" id="guess" maxlength="1">
-            <button onclick="guessLetter()" class="button_pendu">Deviner</button>
-            <span class="attempts-left"></span>
-        </div>
-        <div id="result"></div>
-        <div id="guessed-letters">Lettres testées : </div>
-    </div>
+<div class="game-container">
+  <h1>Le Pendu</h1>
+  <div id="word-length"></div>
+  <div id="word-display"></div>
+  <div class="input-area">
+      <input type="text" id="guess" maxlength="1">
+      <button onclick="guessLetter()">Deviner</button>
+      <span class="attempts-left">(Essais restants : 8)</span>
+  </div>
+  <div id="result"></div>
+  <div id="guessed-letters">Lettres testées : </div>
+  <button id="replayButton" onclick="initializeGame()" style="display: none;">Rejouer</button>
+</div>
 
     <script src="pendu.js"></script>
 </body>
