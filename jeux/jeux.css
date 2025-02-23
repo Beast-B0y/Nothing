@@ -129,7 +129,7 @@ nav {
 
 
 h1 {
-    color: #11f3e0;
+    color: #169e04;
     margin-bottom: 20px;
     font-size: 2em;
     font-weight: 700;
@@ -139,31 +139,25 @@ h1 {
     margin-bottom: 20px;
     font-size: 1.2em;
     font-weight: bold;
-    color: #940909;
+    color: #c9c9c9;
 }
 
 button {
-    padding: 15px 30px;
-    margin: 0 10px;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 8px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: hsl(241, 100%, 50%); /* Couleur verte */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Bords arrondis */
+  cursor: pointer;
+  margin: 0 10px; /* Espacement entre les boutons */
 }
 
 button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+  background-color: #0004ff; /* Couleur verte plus foncée au survol */
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: default;
-}
+
 
 
 
@@ -268,7 +262,19 @@ button_pendu:hover {
 }
 #replayButton {
     display: none; /* Masquer le bouton "Rejouer" au début */
+
 }
+
+#rejouer {
+  /* Styles pour le bouton */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #05ff0e; /* Couleur verte */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 
 
 #gameboard {
