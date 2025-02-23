@@ -262,7 +262,9 @@ button_pendu:hover {
 }
 #replayButton {
     display: none; /* Masquer le bouton "Rejouer" au début */
-
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
 }
 
 #rejouer {
