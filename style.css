@@ -7,7 +7,7 @@ body {
     font-family: sans-serif;
     text-align: center;
     background: repeat;
-    background-image: url(../img/marbre_noir.avif);
+    background-image: url(img/marbre_noir.avif);
     background-size: cover;
     padding: 20px;
     color: rgb(207, 202, 202);
@@ -214,7 +214,7 @@ nav { position: relative; }
 /* THÈME CLAIR                                                               */
 /* ========================================================================= */
 .light-mode {
-    background-image: url(../img/le-marbre.jpg);
+    background-image: url(img/le-marbre.jpg);
     color: rgb(66, 65, 65);
 }
 .light-mode p {
