@@ -1,0 +1,317 @@
+/* ========================================================================= */
+/* THÈME SOMBRE (par défaut)                                                 */
+/* ========================================================================= */
+
+/* Styles généraux */
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background: repeat;
+    background-image: url(../img/marbre_noir.avif);
+    background-size: cover;
+    padding: 20px;
+    color: rgb(207, 202, 202);
+    font-weight: bold;
+    transition: background-image 0.5s ease, color 0.5s ease;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    line-height: 1;
+    margin-bottom: 15px;
+    color: #bdb7b7;
+    font-size: 15px;
+}
+.p2 {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.p0 {
+    color: #42ffe6;
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+span {
+    font-weight: bold;
+    color: #ff0404;
+}
+
+/* Titres et animations */
+h1 {
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif;
+    font-size: 5em;
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(214, 91, 214), rgb(191, 101, 255), rgb(57, 57, 245), rgb(7, 255, 7), yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+/* Boutons */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 20px;
+    transition: transform 0.2s ease;
+}
+button, .mute_button { background-color: #ffffff; color: rgb(0, 0, 0); }
+.button0 { background-color: #0376b9; color: white; }
+.button1 { background-color: blue; color: #ffffff; }
+.button2 { background-color: rgb(216, 150, 7); color: rgb(255, 255, 255); }
+.button3 { background-color: rgb(255, 0, 221); color: rgb(255, 255, 255); }
+.mute_button { background-color: rgb(0, 199, 0); color: rgb(255, 255, 255); }
+.mute_button.muted { background-color: #ff1100; }
+
+/* Menu */
+nav { position: relative; }
+.menu-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+}
+.hamburger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hamburger:hover { opacity: 0.7; }
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: auto;
+    min-width: 150px;
+    border-radius: 5px;
+    display: none;
+    box-shadow: 2px 2px 10px rgb(255, 0, 0);
+    z-index: 1000;
+    background-color: #2c3e50;
+    overflow: hidden;
+}
+.menu.active { display: block; }
+.menu li { display: block; width: 100%; }
+.menu a {
+    text-decoration: none;
+    color: #fa0b0b;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+.menu a:hover {
+    background-color: #fa0000c5;
+    color: #fff;
+}
+.hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Barres et pop-ups */
+.progress-bar {
+    width: 300px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    display: block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.progress-bar-inner {
+    width: 0%;
+    height: 100%;
+    background-color: #ff0606;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+.message-pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999;
+    animation: fadeInOut 3s forwards;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+.message-pop-up.hide { opacity: 0; }
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -60%); }
+    10% { opacity: 1; transform: translate(-50%, -50%); }
+    90% { opacity: 1; transform: translate(-50%, -50%); }
+    100% { opacity: 0; transform: translate(-50%, -40%); }
+}
+
+/* Boutons de musique */
+.music-players {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.music-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+.music-button:hover { transform: translateY(-3px); box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); }
+.spotify-button { background-color: #1DB954; }
+.deezer-button { background-color: #ba0cff; }
+.apple-music-button { background-color: #FC3C44; }
+.youtube-music-button { background-color: #FF0000; }
+.amazon-music-button { background-color: #00A3BF; }
+
+/* ========================================================================= */
+/* THÈME CLAIR                                                               */
+/* ========================================================================= */
+.light-mode {
+    background-image: url(../img/le-marbre.jpg);
+    color: rgb(66, 65, 65);
+}
+.light-mode p {
+    color: #000000;
+}
+.light-mode .p0 {
+    color: #128a7a;
+}
+.light-mode .p2 {
+    color: #000000;
+}
+.light-mode button, .light-mode .mute_button {
+    background-color: #000000;
+    color: white;
+}
+.light-mode .button0 { background-color: #0376b9; color: white; }
+.light-mode .button1 { background-color: blue; color: #ffffff; }
+.light-mode .button2 { background-color: rgb(216, 150, 7); color: rgb(255, 255, 255); }
+.light-mode .button3 { background-color: rgb(255, 0, 221); color: rgb(255, 255, 255); }
+.light-mode .mute_button { background-color: rgb(0, 199, 0); }
+.light-mode .mute_button.muted { background-color: #ff1100; }
+.light-mode .progress-bar {
+    background-color: #b4b4b4;
+}
+.light-mode .hamburger .bar {
+    background-color: #000000;
+}
+.light-mode .menu {
+    background-color: #e2e2e2;
+    box-shadow: 2px 2px 10px rgb(9, 255, 1);
+}
+.light-mode .menu a {
+    color: #0dc707;
+}
+.light-mode .menu a:hover {
+    background-color: #51ff00;
+    color: #fafafa;
+}
+.light-mode span {
+    color: #ff0404;
+}
+
+/* ========================================================================= */
+/* Media Queries                                                             */
+/* ========================================================================= */
+
+@media (max-width: 320px) {
+    body { font-size: 14px; }
+    h1 { font-size: 3em; }
+    p, .p0, .p2 { font-size: 12px; }
+    button, .button0, .button1, .button2, .button3, .mute_button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .menu a { font-size: 1em; }
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .menu li {
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+    }
+    .menu a { color: #fff; font-size: 1.2em; }
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    h1 { font-size: 4em; }
+    p, .p0, .p2 { font-size: 14px; }
+    button, .button0, .button1, .button2, .button3, .mute_button { font-size: 15px; }
+    .menu a { font-size: 1.1em; }
+}

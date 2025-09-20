@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FK9PLRRR0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3FK9PLRRR0');
+    </script>
+    
+    <link rel="icon" href="../../nothing.jpg">
+    <link rel="stylesheet" href="chifumi.css">
+    <title>Pierre-Feuille-Ciseaux</title>
+</head>
+<body>
+    <nav>
+        <div class="menu-toggle">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="../../index.html">Accueil 🏠</a></li>
+                <li><a href="../../html/jeux.html">Jouer 🎮</a></li>
+                <li><a href="../../html/a_venir.html">À venir 📆</a></li>
+                <li><a href="../../html/contact.html">Contacts ☎</a></li>
+                <li><a href="../../html/a_propos.html">À propos 📃</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <script src="menu.js"></script>
+
+    <div class="container">
+        <h1>Pierre-Feuille-Ciseaux</h1>
+        
+        <div id="score">
+            Score : Joueur <span id="joueur-score">0</span> - Ordinateur <span id="ordinateur-score">0</span>
+        </div>
+
+        <div class="choix">
+            <button onclick="jouer('pierre')">✊ </button>
+            <button onclick="jouer('feuille')">✋ </button>
+            <button onclick="jouer('ciseaux')">✌️ </button>
+        </div>
+
+        <div id="resultat">
+            Faites votre choix pour commencer !
+        </div>
+        
+        <button id="reset-btn" style="display: none;">Réinitialiser</button>
+    </div>
+
+    <script src="chifumi.js"></script>
+</body>
+</html>

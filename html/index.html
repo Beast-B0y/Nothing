@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FK9PLRRR0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3FK9PLRRR0');
+    </script>
+
+    <meta charset="UTF-8">
+    <title>Nothing</title>
+    <meta name="description" content="Un site pour... perdre son temps inutillement, mais c'est fun">
+    <meta property="og:image" src="../nothing.jpgs" />
+    <link rel="stylesheet" href="style.css" id="light-theme-css">
+    <link rel="icon" href="../nothing.jpg">
+</head>
+
+<body>
+
+    <nav>
+        <div class="menu-toggle">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="jeux.html">Jouer 🎮</a></li>
+                <li><a href="a_venir.html">À venir 📆</a></li>
+                <li><a href="contact.html">Contacts ☎</a></li>
+                <li><a href="a_propos.html">À propos 📃</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <button id="modeButton">Mode Clair</button> <br> <br>
+
+    <div class="music-players">
+        <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="music-button spotify-button">Spotify</a>
+        <a href="https://www.deezer.com/" target="_blank" rel="noopener noreferrer" class="music-button deezer-button">Deezer</a>
+        <a href="https://music.apple.com/" target="_blank" rel="noopener noreferrer" class="music-button apple-music-button">Apple Music</a>
+        <a href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer" class="music-button youtube-music-button">YouTube Music</a>
+        <a href="https://music.amazon.fr/" target="_blank" rel="noopener noreferrer" class="music-button amazon-music-button">Amazon Music</a>
+    </div>
+
+    <h1>Bienvenue sur Nothing</h1>
+
+    <p class="p2">Bonne perte de temps.</p>
+
+    <div class="progress-bar">
+        <div class="progress-bar-inner"></div>
+    </div>
+
+    <button class="button0" id="clickSound">Perdre son temps</button>
+    
+    <p>Nombre de clics perdus: <span id="clickCount">0</span></p>
+    <p>Temps perdu : <span id="timer">00.00.00</span></p>
+
+    <button class="mute_button" id="muteButton">Couper les sons</button><br>
+
+    <button class="button2" onclick="startTimer()">Démarrer/Reprendre</button>
+    <button class="button1" onclick="pauseTimer()">Pause</button><br>
+    <button class="button3" onclick="window.location.reload();">Réinitialiser</button><br>
+
+    <script src="events.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FK9PLRRR0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3FK9PLRRR0');
+</script>
+    <title>Jeux</title>
+<link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="../nothing.jpg">
+
+<style> .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille responsive */
+  gap: 20px; /* Espacement entre les éléments */
+  width: 80%; /* Largeur du conteneur */
+  max-width: 900px; /* Largeur maximale du conteneur */
+}
+
+.game-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc; /* Bordure légère */
+  border-radius: 5px; /* Bords arrondis */
+  text-decoration: none; /* Supprimer le soulignement des liens */
+  color: inherit; /* Hériter de la couleur du texte du parent */
+  transition: transform 0.2s; /* Animation au survol */
+}
+
+.game-link:hover {
+  transform: scale(1.05); /* Légère augmentation de taille au survol */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.game-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px; /* Taille de l'icône si c'est du texte */
+  background-size: cover; /* Ajuster la taille de l'icône */
+  background-color: transparent; /* Enlever la couleur de fond */
+}
+
+.game-title {
+  font-weight: bold;
+  text-align: center;
+}</style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="menu-toggle">
+          <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul class="menu">
+            <li><a href="index.html">Accueil 🏠</a></li>
+            <li><a href="a_venir.html">À venir 📆</a></li>
+            <li><a href="contact.html">Contacts ☎</a></li>
+            <li><a href="a_propos.html">À propos 📃</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <script>
+       const menuToggle = document.querySelector('.menu-toggle');
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+
+// Gestionnaire d'événements pour le menu déroulant
+if (hamburger && menu) {
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+
+        const expanded = menu.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', expanded);
+        menu.setAttribute('aria-hidden', !expanded);
+    });
+
+    // Fermeture du menu au clic à l'extérieur
+    window.addEventListener('click', (event) => {
+        if (menu.classList.contains('active') && !menuToggle.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', false);
+            menu.setAttribute('aria-hidden', true);
+        }
+    });
+
+    // Empêcher la propagation du clic depuis le menu
+    menu.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+}
+
+      </script>
+      
+
+      <br><br><br><br><br>
+    
+<div class="container">
+  <a class="game-link" href="../jeux/chifumi/chifumi.html">
+    <div class="game-icon">🎮</div>
+    <div class="game-title">Pierre feuille ciseau</div>
+  </a>
+  <a class="game-link" href="../jeux/nombres.html">
+    <div class="game-icon">🕹️</div>
+    <div class="game-title">Trouve le nombre</div>
+  </a>
+  <a class="game-link" href="../jeux/puissance4/puissance4.html">
+    <div class="game-icon">🎲</div>
+    <div class="game-title">Puissance 4</div>
+
+    <script src="events.js"></script>
+    
+    
+     </body>

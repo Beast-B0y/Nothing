@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FK9PLRRR0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3FK9PLRRR0');
+    </script>
+    <link rel="icon" href="../nothing.jpg">
+    <title>Contact</title>
+<link rel="stylesheet" href="style.css"> 
+
+    <style>
+        .center-logo {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 70px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="menu-toggle">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Accueil 🏠</a></li>
+                <li><a href="a_venir.html">À venir 📆</a></li>
+                <li><a href="jeux.html">Jouer 🎮</a></li>
+                <li><a href="a_propos.html">À propos 📃</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+ const hamburger = document.querySelector('.hamburger');
+ const menu = document.querySelector('.menu');
+ 
+ // Gestionnaire d'événements pour le menu déroulant
+ if (hamburger && menu) {
+     hamburger.addEventListener('click', () => {
+         menu.classList.toggle('active');
+         hamburger.classList.toggle('active');
+ 
+         const expanded = menu.classList.contains('active');
+         hamburger.setAttribute('aria-expanded', expanded);
+         menu.setAttribute('aria-hidden', !expanded);
+     });
+ 
+     // Fermeture du menu au clic à l'extérieur
+     window.addEventListener('click', (event) => {
+         if (menu.classList.contains('active') && !menuToggle.contains(event.target) && !menu.contains(event.target)) {
+             menu.classList.remove('active');
+             hamburger.classList.remove('active');
+             hamburger.setAttribute('aria-expanded', false);
+             menu.setAttribute('aria-hidden', true);
+         }
+     });
+ 
+     // Empêcher la propagation du clic depuis le menu
+     menu.addEventListener('click', (event) => {
+         event.stopPropagation();
+     });
+ }
+ 
+       </script>
+
+
+    <p class="p2">
+        Vous avez des questions ou rencontrez des problèmes ? N'hésitez pas à me contacter ! <br>
+        Vous pouvez m'envoyer un message privé ou un email en utilisant les liens ci-dessous. <br>
+        Et si ce site vous plaît, n'hésitez pas à vous abonner à mes réseaux sociaux pour me soutenir !
+    </p>
+
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@nothing.button" target="_blank" title="TikTok">
+            <img src="../img/tiktok.webp" width="60" height="60" alt="Logo TikTok">
+        </a>
+        <a href="https://www.instagram.com/nothing.button" target="_blank" title="Instagram">
+            <img src="../img/Instagram-Logo.wine.svg" width="60" height="60" alt="Logo Instagram">
+        </a>
+        <a href="https://discord.gg/qThBFTmwnu" target="_blank" title="Serveur Discord">
+            <img src="../img/discord-icon.svg" width="60" height="60" alt="Logo Discord">
+        </a>
+        <a href="mailto:nothing.button.help@gmail.com" target="_blank" title="Envoyer un email">
+            <img src="../img/gmail.svg" width="60" height="60" alt="Logo Email">
+        </a>
+    </div>
+
+    <script src="events.js"></script>
+
+
+</html>
